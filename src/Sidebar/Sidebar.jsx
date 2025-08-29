@@ -10,18 +10,19 @@ const Sidebar = ({handlechange, handleColorChange}) => {
   const [isOpen, setIsOpen] = useState(true)
 
   return (
-    <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+    <>
+      <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+        <div className="cart-logo-container">
+          <h1><FiShoppingCart /></h1>
+        </div>
+        <Category handlechange={handlechange}/>
+        <Colors handlechange={handleColorChange}/>
+        <Price handlechange={handlechange}/>
+      </div>
       <button className="toggle-btn" onClick={() => setIsOpen(!isOpen)}>
         <FiMenu />
-      </button> 
-      <div className="cart-logo-container">
-        <h1><FiShoppingCart /></h1>
-      </div>
-
-      <Category handlechange={handlechange}/>
-      <Colors handlechange={handleColorChange}/>
-      <Price handlechange={handlechange}/>
-    </div>
+      </button>
+    </>
   )
 }
 

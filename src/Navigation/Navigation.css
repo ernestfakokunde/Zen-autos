@@ -5,6 +5,12 @@
   padding: 15px 30px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
 }
 
 .logo-container h1 {
@@ -44,4 +50,42 @@
 
 .nav-icons:hover {
   color: #666;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+    order: 1;
+  }
+
+  .logo-container {
+    order: 2;
+  }
+
+  .nav-container {
+    order: 4;
+    width: 100%;
+    margin: 10px 0;
+    display: none;
+  }
+
+  .profile-container {
+    order: 3;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex-direction: column;
+  }
+
+  .profile-container.mobile-menu-open {
+    display: flex;
+  }
+
+  .nav-bar {
+    flex-wrap: wrap;
+  }
 }

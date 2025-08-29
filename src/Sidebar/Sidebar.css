@@ -8,7 +8,7 @@
   transition: all 0.3s ease;
   border-right: 1px solid #e5e7eb;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
-  z-index: 1000;
+  z-index: 9999;
   overflow-y: auto;
   padding: 2rem 0;
   display: flex;
@@ -21,23 +21,24 @@
 }
 
 .toggle-btn {
-  position: absolute;
+  position: fixed;
   top: 20px;
-  right: -45px;
+  left: 20px;
   background: #ffffff;
   border: 1px solid #d1d5db;
   cursor: pointer;
   font-size: 1.1rem;
   color: #6b7280;
   padding: 10px;
-  border-radius: 0 6px 6px 0;
-  box-shadow: 1px 0 4px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 45px;
   height: 45px;
+  z-index: 10000;
 }
 
 .toggle-btn:hover {
@@ -90,11 +91,26 @@
     width: 260px;
     left: -260px;
   }
-  
+
+  .sidebar.open {
+    left: 0;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar.open + .toggle-btn {
+    left: 280px;
+  }
+
   .toggle-btn {
-    right: -40px;
     width: 40px;
     height: 40px;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transition: left 0.3s ease;
   }
 }
