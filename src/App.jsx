@@ -80,7 +80,7 @@ const filteredItems = useMemo(() => {
   }
 
   return list
-}, [products, query, selectedCategory, selectedCompany, selectedColor, selectedPrice])
+}, [ query, selectedCategory, selectedCompany, selectedColor, selectedPrice])
 
 // color filter
 const handleColorChange = (event) => {

@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import products from '../db/data';
+import { MdAddShoppingCart } from "react-icons/md";
 
 const Card = ({ items }) => {
+
+  //function to handle cart when user add any products to cart
+  const [cart, setcart] = useState([]);
+  //handle cart click
+  const handlecartclick=(items)=>{
+    setcart([...cart, items])
+  }
+  console.log(cart)
+
   const list = Array.isArray(items) && items.length > 0 ? items : products
   return (
     <div className="products-wrapper">
@@ -25,6 +35,9 @@ const Card = ({ items }) => {
             <div className="card-price">
               <span className="price">{item.newPrice}</span>
               <span className="price-old">{item.prevPrice}</span>
+              <div className="add-to-cart-icon">
+                <MdAddShoppingCart onClick={()=> handlecartclick(item)}/>
+              </div>
             </div>
           </div>
         </section> 

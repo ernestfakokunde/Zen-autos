@@ -12,7 +12,7 @@
 }
 
 .card {
-  background: white;
+  background: rgb(255, 255, 255);
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -197,4 +197,18 @@
   100% {
     background-position: -200% 0;
   }
+}
+.add-to-cart-icon{
+  position: absolute;;
+  right: 13px;
+  background-color: rgb(68, 67, 67);
+  color: white;
+  border-radius: 50%;
+  width: 23px;
+  height: 22px;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
 }
